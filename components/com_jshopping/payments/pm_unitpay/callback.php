@@ -65,7 +65,7 @@ if ((isset($_GET['params'])) && (isset($_GET['method'])) && (isset($_GET['params
     $status_sign = false;
 }
 
-$status_sign = true;
+//$status_sign = true;
 
 if ($status_sign){
     switch ($method) {
