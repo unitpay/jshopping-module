@@ -3,6 +3,8 @@
 //защита от прямого доступа
 defined('_JEXEC') or die();
 
+define('_JSHOP_CFG_UNITPAY_DOMAIN', 'DOMAIN');
+define('_JSHOP_CFG_UNITPAY_DOMAIN_DESCRIPTION', 'Вставьте ваш рабочий домен');
 define('_JSHOP_CFG_UNITPAY_PUBLIC_KEY', 'PUBLIC KEY');
 define('_JSHOP_CFG_UNITPAY_PUBLIC_KEY_DESCRIPTION', 'Скопируйте PUBLIC KEY со страницы проекта в системе Unitpay');
 define('_JSHOP_CFG_UNITPAY_SECRET_KEY', 'SECRET KEY');
