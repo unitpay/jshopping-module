@@ -8,6 +8,14 @@ defined('_JEXEC') or die();
 <div class="col100">
 	<fieldset class="adminform">
 		<table class="admintable" width="100%">
+            <tr>
+                <td class="key" width="300">
+                    <?php echo "DOMAIN"; ?></td>
+                <td>
+                    <input type="text" name="pm_params[unitpay_domain]" class="inputbox" value="<?php echo $params['unitpay_domain']; ?>" />
+                    <?php echo JHTML::tooltip(_JSHOP_CFG_UNITPAY_DOMAIN_DESCRIPTION); ?>
+                </td>
+            </tr>
 			<tr>
 				<td class="key" width="300">
 					<?php echo "PUBLIC KEY"; ?></td>

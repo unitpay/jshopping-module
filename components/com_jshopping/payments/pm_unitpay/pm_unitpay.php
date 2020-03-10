@@ -21,7 +21,7 @@ class pm_unitpay extends PaymentRoot
     //функция показывает настройки плагина в админке
     function showAdminFormParams($params)
     {
-        $array_params = array('unitpay_public_key', 'unitpay_secret_key', 'payment_end_status', 'payment_failed_status');
+        $array_params = array('unitpay_domain', 'unitpay_public_key', 'unitpay_secret_key', 'payment_end_status', 'payment_failed_status');
 
         foreach ($array_params as $key) {
             if (!isset($params[$key])) {
@@ -39,6 +39,7 @@ class pm_unitpay extends PaymentRoot
     //функция показывает форму оплаты
     function showEndForm($pmconfigs, $order)
     {
+        $domain = $pmconfigs['unitpay_domain'];
         $public_key = $pmconfigs['unitpay_public_key'];
         $secret_key = $pmconfigs['unitpay_secret_key'];
         $sum = $order->order_total;
@@ -62,7 +63,7 @@ class pm_unitpay extends PaymentRoot
             <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         </head>
         <body>
-        <form name="unitpay" action="https://unitpay.ru/pay/<?php print $public_key;?>" method="get">
+        <form name="unitpay" action="https://<?php print $domain;?>/pay/<?php print $public_key;?>" method="get">
             <input type="hidden" name="sum" value="<?php print $sum;?>">
             <input type="hidden" name="account" value="<?php print $account;?>">
             <input type="hidden" name="desc" value="<?php print $desc;?>">
